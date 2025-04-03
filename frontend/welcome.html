@@ -1,0 +1,513 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vinay Patil - Frontend Developer</title>
+  <style>
+    /* Global Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    /* Body & Fonts */
+    body {
+      font-family: "Arial", sans-serif;
+      background-color: #0A0A0A;
+      color: #FFFFFF;
+      line-height: 1.6;
+    }
+    
+    /* Header */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      background: #111111;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+    
+    .logo {
+      font-weight: bold;
+      font-size: 1.2rem;
+      color: #fff;
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+    
+    .nav-links a {
+      text-decoration: none;
+      color: #cccccc;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+    .nav-links :hover{
+      background: linear-gradient(90deg, #9f00ff, #ff007b);
+    }
+    
+    .nav-links a:hover {
+      color: #ffffff;
+    }
+    
+    .lang-toggle {
+      border: 1px solid #ccc;
+      padding: 6px 12px;
+      border-radius: 20px;
+      cursor: pointer;
+      color: #fff;
+      font-size: 0.9rem;
+      transition: background 0.3s ease;
+    }
+    
+    .lang-toggle:hover {
+      background: #333333;
+    }
+    
+    /* Hero Section */
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      min-height: calc(100vh - 80px);
+      padding: 40px 20px;
+      background: #0A0A0A;
+    }
+    
+    .hero-text {
+      max-width: 600px;
+      margin: 20px;
+      text-align: center;
+    }
+    
+    .hero-title {
+      font-size: 3rem;
+      font-weight: bold;
+      background: linear-gradient(90deg, #ff00e6, #9f00ff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      background-clip: text;
+      background-clip: text;
+      background-clip: text;
+      background-clip: text;
+      background-clip: text;
+      background-clip: text;
+      background-clip: text;
+      background-clip: text;
+      background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 20px;
+    }
+    
+    .hero-subtitle {
+      font-size: 1.2rem;
+      line-height: 1.5;
+      color: #cccccc;
+      margin-bottom: 30px;
+    }
+    
+    .cta-btn {
+      display: inline-block;
+      padding: 12px 24px;
+      background: linear-gradient(90deg, #007bff, #9f00ff);
+      color: #ffffff;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+    
+    .cta-btn:hover {
+      background: linear-gradient(90deg, #9f00ff, #007bff);
+    }
+    
+    /* Services Section */
+    .services {
+      text-align: center;
+      padding: 50px 20px;
+    }
+    
+    .services h1 {
+      font-size: 2.5rem;
+      font-weight: bold;
+      background: linear-gradient(90deg, #ff007b, #4a90e2);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 30px;
+    }
+    
+    .service-card {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      padding: 20px;
+      width: 60%;
+      margin: 20px auto;
+      text-align: left;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+      transition: transform 0.3s ease-in-out;
+    }
+    
+    .service-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    /* project Section */
+    .project-section {
+      padding: 50px 20px;
+      background: #0A0A0A;
+      text-align: center;
+    }
+    
+    .project-section h1 {
+      font-size: 2.5rem;
+      font-weight: bold;
+      background: linear-gradient(90deg, #ff007b, #4a90e2);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 40px;
+    }
+    
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .project-card {
+      background-color: #111111; 
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease-in-out;
+      cursor: pointer;
+    }
+    
+    .project-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .project-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+    }
+    
+    .card-content {
+      padding: 20px;
+      text-align: left;
+    }
+    
+    .card-content h2 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      color: #ffffff;
+    }
+    
+    .card-content p {
+      font-size: 0.9rem;
+      line-height: 1.4;
+      color: #cccccc;
+      margin-bottom: 15px;
+    }
+    
+    .project-type {
+      font-weight: bold;
+      color: #72c6ff;
+    }
+
+    .contact-container {
+      flex: 1;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .contact-info, .contact-form {
+      flex: 1;
+      min-width: 280px;
+      margin-bottom: 40px;
+    }
+
+    .contact-info h1 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      background: linear-gradient(90deg, #ff007b, #9f00ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .contact-info p {
+      color: #cccccc;
+      line-height: 1.6;
+    }
+
+    .contact-details .email {
+      font-weight: bold;
+      color: #72c6ff;
+    }
+
+    .contact-form h2 {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      color: #cccccc;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      background-color: #1a1c24;
+      border: 1px solid #333;
+      border-radius: 4px;
+      color: #fff;
+    }
+
+    button {
+      align-self: flex-start;
+      padding: 12px 24px;
+      background: linear-gradient(90deg, #ff007b, #9f00ff);
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: linear-gradient(90deg, #9f00ff, #ff007b);
+    }
+
+    .contact-title {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 20px;
+      background: linear-gradient(90deg, #ff007b, #9f00ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .status-message {
+      margin-top: 10px;
+      display: none;
+    }
+
+    .success {
+      color: #72ff72;
+    }
+
+    .error {
+      color: #ff7272;
+    }
+    
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #111111;
+      color: #999999;
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .contact-container {
+        flex-direction: column;
+      }
+    }
+    
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #999999;
+      background: #111111;
+    }
+    
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+      }
+    
+      .hero-title {
+        font-size: 2.5rem;
+      }
+      
+      .service-card {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo">Vinay Patil</div>
+    <nav class="nav-links">
+      <a href="#services">SERVICES</a>
+      <a href="#project">PROJECT</a>
+      <a href="#">TECHNOLOGIES</a>
+      <a href="#contact">CONTACT</a>
+    </nav>
+
+  <button class="logout-btn" onclick="logout()">Logout</button>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1 class="hero-title">FRONTEND DEVELOPER</h1>
+      <p class="hero-subtitle">
+        I am Vinay Patil - <span class="highlight">web-developer</span> with a passion
+        for creating beautiful and responsive websites.
+      </p>
+      <a href="#services" class="cta-btn">Explore Services </a>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="services">
+    <h1>MY SERVICES</h1>
+    <div class="service-card">
+      <h2>Website Development</h2>
+      <p>I create websites based on your design, making them smooth and responsive.</p>
+    </div>
+    <div class="service-card">
+      <h2>Web Design</h2>
+      <p>I create modern and user-friendly web designs tailored to your brand.</p>
+    </div>
+    <div class="service-card">
+      <h2>WordPress Development</h2>
+      <p>I build websites on WordPress, making them easy to update and manage.</p>
+    </div>
+  </section>
+
+  <!-- project Section -->
+  <section id="project" class="project-section">
+    <h1>PROJECT</h1>
+    <div class="project-grid">
+      <!-- Card 1 -->
+      <div class="project-card">
+        <img src="/static/rms.jpg" alt="Image">
+
+        <div class="card-content">
+          <h2>Project One</h2>
+          <p>A short description about project one.</p>
+          <div class="project-type">Website Coding (HTML, CSS, JS)</div>
+        </div>
+      </div>
+      <!-- Card 2 -->
+      <div class="project-card">
+        <img src="/static/arb.jpg" alt="Project 2">
+        <div class="card-content">
+          <h2>Project Two</h2>
+          <p>A short description about project two.</p>
+          <div class="project-type">Website Coding (HTML, CSS, JS)</div>
+        </div>
+      </div>
+      <!-- Card 3 -->
+      <div class="project-card">
+        <img src="/static/mrs.jpg" alt="Project 3">
+        <div class="card-content">
+          <h2>Project Three</h2>
+          <p>A short description about project three.</p>
+          <div class="project-type">online movie recommendation system using python with ml</div>
+        </div>
+      </div>
+      <!-- Card 4 -->
+      <!-- <div class="project-card">
+        <img src="https://via.placeholder.com/400x180/444444/ffffff?text=Project+4" alt="Project 4">
+        <div class="card-content">
+          <h2>Project Four</h2>
+          <p>A short description about project four.</p>
+          <div class="project-type">Website Coding (HTML, CSS, JS)</div>
+        </div>
+      </div> -->
+      <!-- Card 5 -->
+      <!-- <div class="project-card">
+        <img src="https://via.placeholder.com/400x180/222222/ffffff?text=Project+5" alt="Project 5">
+        <div class="card-content">
+          <h2>Project Five</h2>
+          <p>A short description about project five.</p>
+          <div class="project-type">Website Coding (HTML, CSS, JS)</div>
+        </div>
+      </div> -->
+      <!-- Card 6 -->
+      <!-- <div class="project-card">
+        <img src="https://via.placeholder.com/400x180/111111/ffffff?text=Project+6" alt="Project 6">
+        <div class="card-content">
+          <h2>Project Six</h2>
+          <p>A short description about project six.</p>
+          <div class="project-type">Website Coding (HTML, CSS, JS)</div>
+        </div> -->
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact-container">
+    <h1 class="contact-title">CONTACT</h1>
+    <div class="contact-info">
+      <h1>DO YOU HAVE A PROJECT TO DISCUSS?</h1>
+      <p>Feel free to reach out if you have any questions or want to discuss your next project.</p>
+      <div class="contact-details">
+        <h2>CONTACT</h2>
+        <p class="email">vinaypatilr2001@gmail.com</p>
+      </div>
+    </div>
+    <div class="contact-form">
+      <h2>CONTACT FORM</h2>
+      <form id="contactForm">
+        <input type="text" id="name" name="name" placeholder="Your Name" required />
+        <input type="email" id="email" name="_replyto" placeholder="Your Email" required />
+        <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+        <button type="submit">SEND</button>
+        <p class="status-message success" id="successMsg">Thank you! Your message has been sent.</p>
+        <p class="status-message error" id="errorMsg">Oops! Something went wrong. Please try again.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2024 - All rights reserved. Web design and development - Vinay Patil</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // Add click event to project cards
+    const projectCards = document.querySelectorAll('.project-card');
+    projectCards.forEach(card => {
+      card.addEventListener('click', () => {
+        const projectTitle = card.querySelector('h2').textContent;
+        console.log('Clicked on:', projectTitle);
+        // Additional interactive logic (e.g., modal popup) can be added here.
+      });
+    });
+  </script>
+  <script>
+    // Listen for the contact form submission
+    
+  </script>
+  
+  <script src="/static/javascript.js"></script>
+</body>
+</html>
