@@ -12,7 +12,7 @@ from sqlalchemy.orm import sessionmaker, Session
 import datetime
 
 # Configuration
-DATABASE_URL = "postgresql://postgres:Vinay007@db.jtjxmlfpmvmqhfvyfzfq.supabase.co:5432/postgres"
+DATABASE_URL = "postgresql://postgres:GJjKBMRMAOsUIHqrjCXhwaPXhxagtybU@metro.proxy.rlwy.net:31429/railway"
 SECRET_KEY = "your-secret-key"
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 60
